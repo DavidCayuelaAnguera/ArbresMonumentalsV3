@@ -1,0 +1,110 @@
+/* Autor: David Cayuela Anguera - 2025 */
+/* Estils generals del lloc web */
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('../images/fons.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #1c4e3d; /* Verd UAB Biociències aproximat */
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background-color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    padding: 1em;
+}
+
+main  {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2em;
+    margin: 2em;
+    border-radius: 10px;
+}
+
+
+
+
+/* ...resta d'estils... */
+
+main p {
+    font-size: 1.2em; /* Mida de lletra més gran */
+    text-align: justify; /* Text justificat */
+    line-height: 1.6em;
+}
+
+nav {
+    text-align: center; /* Centrar els botons */
+    margin-top: 2em;
+}
+
+nav a {
+    display: inline-block;
+    margin: 1em;
+    padding: 1em 2em;
+    background-color: #3c6e5a;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+nav a:hover {
+    background-color: #29523f;
+}
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5em;
+    margin-top: 2em;
+}
+
+.card button {
+  margin-top: 0.5em;
+  padding: 0.5em 1em;
+  background-color: #1c4e3d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.card button:hover {
+  background-color: #29523f;
+}
+.card {
+    background-color: #3c6e5a;
+    color: white;
+    text-align: center;
+    padding: 1.5em;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.card:hover {
+    background-color: #29523f;
+}
+
+.center {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.back-button {
+    background-color: #1c4e3d;
+    color: white;
+    padding: 0.8em 1.5em;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    background-color: #133a2c;
+}
+

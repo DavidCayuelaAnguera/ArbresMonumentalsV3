@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Castanyers de la Traüna IV</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Castanyers de la Traüna IV</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM41.081.05</li>
+            <li><strong>Tàxon:</strong> Castanea sativa</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Fogars de Montclús</li>
+            <li><strong>Comarca:</strong> Vallès Oriental</li>
+            <li><strong>Propietat:</strong> Pública</li>
+            <li><strong>Classificació Etnoecològica:</strong> </li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">Aquests quatre grans castanyers custodiaven (en el moment de la seva màxima esplendor) el camí de la casa de colònies de la Traüna</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Broncano, M.J., Boada, M., & Boada A., (2006). Arbres i Arbredes singulars del Montseny. (p. 84) Sant Vicenç de Castellet: Farell</p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/valles-oriental.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

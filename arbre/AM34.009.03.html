@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Magnòlia del Roquer</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Magnòlia del Roquer</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM34.009.03</li>
+            <li><strong>Tàxon:</strong> Magnolia grandiflora</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Arbúcies  </li>
+            <li><strong>Comarca:</strong> La Selva</li>
+            <li><strong>Propietat:</strong> Privada  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Ornamental - jardí</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">Considerada la magnòlia més gran d'Europa (havia arribat a tenir 25 metres d'alçada), es troba dins el Jardí Dendrològic del Roquer (plantada el 1873). Posar tota la info de la família dels Roquer? no relacionada directament amb la magnòlia.</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample"></p>
+
+        <div class="center">
+            <a href="../comarques/girona/la-selva.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

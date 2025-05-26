@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Castanyer Gros de la Casa del Bosc o Castanyer de can Cuc</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Castanyer Gros de la Casa del Bosc o Castanyer de can Cuc</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM41.042.01</li>
+            <li><strong>Tàxon:</strong> Castanea sativa</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Cànoves i Samalús </li>
+            <li><strong>Comarca:</strong> Vallès Oriental</li>
+            <li><strong>Propietat:</strong> Privada</li>
+            <li><strong>Classificació Etnoecològica:</strong> Funcional - habitatge, alimentari - carbohidrats, fècual i altres, polític</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">El 1960 un carboner que treballava a la zona va aprofitar la gran cavitat que havia quedat a l'interior de l'arbre com a conseqüència de l'incendi per instal·lar-hi el seu habitatge, on va residir durant un any i mig. Hi tenia fins i tot una llar de foc, ja que el tronc del castanyer té, casualment, dos forats, un a cada banda, un a mode d'entrada a la "cabana" i l'altre com si es tractés d'una finestra o xemeneia.). Aquest tipus de castanyer pertany al grup dels arbres llavorers, la funció dels quals és la producció de castanyes. Durant el 2023 el castanyer de can Cuch ha estat una la imatge del cupó diari de l'ONCE. Considerat l'arbre mes gran de Catalunya pel seu perímetre.</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Boada, M. & Boada A., (2011). Castanyer d'en Cuch. Dins Arbres remarcables de Catalunya. 100 ombres colossals. (pp. 236-237) Figueres.: Brau
+Generalitat de Catalunya (2022) Castanyer Gros de la Casa del Bosc (o de Can Cuc). Recuperat de https://mediambient.gencat.cat/ca/05_ambits_dactuacio/patrimoni_natural/arbres-monumentals/am_arbres_monumentals_fitxes/valles-oriental-10/castanyer-gros-de-la-casa-del-bosc-o-de-can-cuc/index.html</p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/valles-oriental.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

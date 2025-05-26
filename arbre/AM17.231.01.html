@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Pi de la Palanca</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Pi de la Palanca</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM17.231.01</li>
+            <li><strong>Tàxon:</strong> Pinus halepensis  </li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Sant Pere de Ribes  </li>
+            <li><strong>Comarca:</strong> Garraf</li>
+            <li><strong>Propietat:</strong> Pública  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Funcional - simbòlic, polític</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">L'arbre amb forma de "V", és una icona del municipi. La seva imatge surt en unes enganxines de promoció del poble que diuen "Això és Viure".A la pàgina de l’Ajuntament de Sant Pere de Ribes, a l’apartat de Turisme hi figura la següent informació: L’origen del nom de “palanca” ve d'una palanca o llistó que s'utilitzava com a pont per unir el nucli de Sota-ribes i el de Ribes, a l'altra banda de la rieraLa gent s'hi aplegava a sentir cantar Caramelles, una dels anys 50 deia així (J. Mestre):
+
+"Sobre el Pi de la Palanca
+fan el niu els ocellets
+i saltant de branca en branca
+van cantant els refilets".</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Generalitat de Catalunya (2021). Pi de la Palanca. Recuperat de https://mediambient.gencat.cat/ca/05_ambits_dactuacio/patrimoni_natural/arbres-monumentals/am_arbres_monumentals_fitxes/garraf-3/pi-de-la-palanca/index.html 
+Plantipodes-AM (2023). Pi de la Palanca. Recuperat de https://www.plantipodes-am.cat/fitxes/pipalanca.html</p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/garraf.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

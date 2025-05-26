@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Garrofer de Montcabrer</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Garrofer de Montcabrer</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM21.030.01</li>
+            <li><strong>Tàxon:</strong> Ceratonia siliqua</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Cabrils</li>
+            <li><strong>Comarca:</strong> Maresme</li>
+            <li><strong>Propietat:</strong> Privada  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Ramader - energètic, alimentari</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">	El Garrofer de Montcabrer és un dels pocs garrofers grossos que queden en aquesta zona on, antigament, l'espècie tenia una gran presència per aprofitament del fruit (la garrofa), sobretot com a menjar per al bestiar. A part de l’ús alimentari que es donava a les garrofes, la fusta de les successives aclarides que es feien al brancatge es carbonaven. Actualment una part important de la producció de garrofes s’empra per a fer-ne pinsos o per a ser utilitzada en productes farmacèutics i el garrofí (la llavor) com agent espessidor i gelificant de productes alimentaris (E-410).</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Boada, M. & Boada A., (2011). Garrofer de Montcabrer o de Mataró Dins. Arbres remarcables de Catalunya. 100 ombres colossals. (pp. 138-139) Figueres.: Brau
+Generalitat de Catalunya (2022). Garrofer de Montcabrer. Recuperat de https://mediambient.gencat.cat/ca/05_ambits_dactuacio/patrimoni_natural/arbres-monumentals/am_arbres_monumentals_fitxes/maresme-5/garrofer-de-montcabrer/index.html</p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/maresme.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

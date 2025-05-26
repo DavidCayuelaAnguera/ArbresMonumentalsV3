@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Roure de Santa Maria de Montnegre</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Roure de Santa Maria de Montnegre</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM41.202.01</li>
+            <li><strong>Tàxon:</strong> Quercus pubescens</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Sant Celoni</li>
+            <li><strong>Comarca:</strong> Vallès Oriental</li>
+            <li><strong>Propietat:</strong> n/d</li>
+            <li><strong>Classificació Etnoecològica:</strong> Funcional - fites, arbre mare, funcional - simbòlic, religiós</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">L'arbre majestuós a recer de l'ermita de Santa Maria era punt de trobada obligat pels caminats i ciclistes que s'endinsaven en l'agraït paisatge del Parc Natural del Montnegre i el Corredor. El 2010-01-08 sobtadament, un temporal de neu i vent de més de 100 km/h va trencar l'arbre, que va caure i va quedar al descobert el tronc mig buit per podriment. Els Amics de Santa Maria del Montnegre han aconseguit que el Roure reneixi mitjançant clonació (El Punt Avui, 2012-11-10). La capella de Santa Maria és del segle XIX i és una mostra de l'empremta humana en aquestes muntanyes i de la voluntat popular de tenir un lloc de pregària i de trobada amb la gent de pobles o veïnats propers. Ara bé, aquesta capella ja apareix esmentada el 1575. Fins a mitjans del segle XX, de fet, s'hi celebrava un aplec cada 15 d'agost.</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Márquez, T., (2010). Història d’un arbre. Dintre de El Punt Avui. Recuperat de  https://www.elpuntavui.cat/article/124328-historia-dun-arbre.html
+Márquez, T., (2012). El Roure del Montnegre reneix. Dintre de El Punt Avui. Recuperat de  https://www.elpuntavui.cat/article/592007-el-roure-del-montnegre-reneix.html
+Plantipodes-AM (2021). Roure de Santa Maria de Montnegre. Recuperat de  https://www.plantipodes-am.cat/fitxes/rouresantamariamontenegre.html</p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/valles-oriental.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Lledoner de l'Estació</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Lledoner de l'Estació</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM07.178.01</li>
+            <li><strong>Tàxon:</strong> Celtis australis</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Rajadell</li>
+            <li><strong>Comarca:</strong> El Bages</li>
+            <li><strong>Propietat:</strong> Pública  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Funcional - simbòlic</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">La morfologia de l'arbre i el tractament que rep mostra el seu valor simbòlic i representatiu per a la gent de Rajadell.</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Boada, M. & Boada A., (2011). Lledoner de l'Estació. Dins Arbres remarcables de Catalunya. 100 ombres colossals. (pp. 70-71) Figueres.: Brau</p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/el-bages.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

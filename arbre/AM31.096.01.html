@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Roure Glanic</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Roure Glanic</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM31.096.01</li>
+            <li><strong>Tàxon:</strong> Quercus pubescens</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Les Lloses</li>
+            <li><strong>Comarca:</strong> El Ripollès</li>
+            <li><strong>Propietat:</strong> Privada  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Ramader- energètic, alimentari - carbohidrats, fècula i altres</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">Rep el nom de "Glanic" perquè fa les glans molt petites. També és conegut amb el nom de Roure del Païdor o Roure de Llimós. Els propietaris creuen que
+l’arbre deu tenir uns 700 o 800 anys, aproximadament, tot i que en desconeixen la data exacte.</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Generalitat de Catalunya (2022). Roure Glanic. Recuperat de https://mediambient.gencat.cat/ca/05_ambits_dactuacio/patrimoni_natural/arbres-monumentals/am_arbres_monumentals_fitxes/ripolles-9/roure-glanic/index.html 
+Vinyeta, R., (1978). Roure del Païdor. Dintre de Sant Jaume de Frontanyà i l'Alta Vall del Riu Merlès. (p. 33). Torelló: Celblau.</p>
+
+        <div class="center">
+            <a href="../comarques/girona/el-ripolles.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

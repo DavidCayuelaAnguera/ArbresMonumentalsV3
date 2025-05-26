@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Plàtan de la Font Gran</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Plàtan de la Font Gran</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM24.278.02</li>
+            <li><strong>Tàxon:</strong> Platanus × hispanica</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Taradell</li>
+            <li><strong>Comarca:</strong> Osona</li>
+            <li><strong>Propietat:</strong> Pública  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Funcional - simbòlic, atractors turístics</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">El parc de la Font Gran situat a la part baixa de la població i a la riba de la riera de Taradell, és un dels llocs més bonics que cal veure del poble.
+Dóna nom al parc, la font que fou construïda el 1790, després de canalitzar el gran doll d'aigua que antigament brollava pels esqueis de les roques situades en aquest indret i que fou probablement  l'origen i formació de la població, ja que abastia el poble, donava aigua als paraires i feia funcionar els molins.
+La font, abans anomenada Font de Sant Genís, mostra set brocs de metall i un cap de lleó de pedra al centre.
+Es gaudeix de calma, i fresca a l'estiu, en el recorregut pel parc, que dóna la volta i té com a referència el corpulent, alt i centenari plàtan.</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Generalitat de Catalunya (2022). Plàtan de la Font Gran. Recuperat de https://mediambient.gencat.cat/ca/05_ambits_dactuacio/patrimoni_natural/arbres-monumentals/am_arbres_monumentals_fitxes/osona-30/platan-de-la-font-gran/index.html</p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/osona.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

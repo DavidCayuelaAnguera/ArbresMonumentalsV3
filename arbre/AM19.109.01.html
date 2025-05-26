@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Roures d'Ormoier</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Roures d'Ormoier</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM19.109.01</li>
+            <li><strong>Tàxon:</strong> Quercus robur</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Montagut</li>
+            <li><strong>Comarca:</strong> La Garrotxa</li>
+            <li><strong>Propietat:</strong> Pública  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Productor d'eines, Funcional - simbòlic</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">L'any 1748, el rei Ferran VI, va declarar boscos de la Marina Reial, els boscos que es trobaven a menys de "25 leguas" (138 km) de costes i rius navegables, i podien marcar i tallar els arbres que consideraven idonis per a la construcció naval. Aquests roures, sembla que van ser marcats, per això també es coneixen a la comarca com a Roures del Rei.
+Es troben situats a l'esplanada de Plancesilles, prop de la masia de Cabesses.</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Boada, M. & Boada A., (2011). Roures d'Hortmoier I, II i IV. Dins Arbres remarcables de Catalunya. 100 ombres colossals. (pp. 128-129) Figueres.: Brau</p>
+
+        <div class="center">
+            <a href="../comarques/girona/la-garrotxa.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

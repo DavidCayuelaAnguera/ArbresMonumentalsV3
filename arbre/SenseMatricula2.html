@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Casanyer de les Nou Branques</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Casanyer de les Nou Branques</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> SenseMatricula2</li>
+            <li><strong>Tàxon:</strong> Castanea sativa</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Viladrau</li>
+            <li><strong>Comarca:</strong> Osona</li>
+            <li><strong>Propietat:</strong> Pública  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Religiós, polític</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">El Castanyer de les Nou Branques va ser escollit l’any 2012 per identificar el nou escut del poble de Viladrau. Ha estat reproduït en molts llocs com ara a targetes postals com la que
+mostrem. Fins i tot Guerau de Liost li va dedicar:
+"Ets mil·lenari. Tens la soca plena i llisa.
+Quatre homes no la poden, minúsculs, abraçar.
+I ets canelobre de nou tanys que es subtilitza
+en nou brandons mirífics d'improvisat altar." 
+Se li calculen aproximadament 700 anys d’antiguitat i és un dels arbres emblemàtics del Montseny. De les 9 branques originals, ara ja només conserva 5, dues d’elles esberlades per les fortes ventades de l’any 1987.
+La seva fusta és especialment apreciada per l’exterior, ja que costa molt de corcar-se. La fusta de castanyer té moltes utilitats, entre altres es fabriquen: bótes de vi, bastons, taules, bancs, paviments, tanques, mobles, etc...
+Fa 20 anys que, a Catalunya, una greu malaltia asseca els arbres: el xancre del castanyer. El xancre és un fong que penetra per una ferida i, un cop dins, s'escampa i asseca l'arbre. </p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Natura Local (s.d.). El castanyer de les Nou Branques. Recuperat de https://naturalocal.net/ca/rutes-senderisme-catalunya/rutes-senderisme-girona/rutes-senderisme-viladrau/el-castanyer-de-les-nou-branques/el-castanyer-de-les-nou-branques
+Totnens (2025). Castanyer de les 9 branques a Viladrau. Recuperat de https://totnens.cat/que-fem/excursions-en-familia-castanyer-de-les-9-branques-viladrau/
+Vinyeta, R. (1985). El Castanyer de les Nou Branques. Dins Arbres monumentals de Catalunya. (p. 101) Torelló: Celblau</p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/osona.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

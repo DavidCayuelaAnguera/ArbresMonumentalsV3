@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Roure de la Xoriguera</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Roure de la Xoriguera</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM19.133.01</li>
+            <li><strong>Tàxon:</strong> Quercus pubescens  </li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> les Planes d'Hostoles</li>
+            <li><strong>Comarca:</strong> La Garrotxa</li>
+            <li><strong>Propietat:</strong> Privada</li>
+            <li><strong>Classificació Etnoecològica:</strong> Polítics</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">A la finca de la Xoriguera existia una roureda d'exemplars magnífics. Quan l'any 1908, el propietari va decidir tallar la roureda, la seva família li ho retragué, aleshores, el propietari va decidir no deixar tallar 12 dels roures, però li calgué pagar 15 duros per cada un d'ells. Aquest Roure és un d'aquests 12 escollits.
+"Pels volts dels anys 30, en plena Guerra Civil, el senyor Pere, el propietari del Bosc de la Xuriguera es va vendre tots els arbres per tallar-los, ja que en aquella època la fusta tenia un altre preu i els boscos eren molt més rendibles que no pas ara. El cas és que el senyor Pere va tenir remordiments un cop feta la venda, ja que hi havia arbres tan enormes que era difícil veure’n altres d’iguals per allà a prop. El que va fer va ser comprar 10 arbres, molt més cars del preu que els havia venut, però gràcies a aquesta acció avui dia podem gaudir d’aquest magnífic exemplar i de dos més: el roure de la Partió situat just al límit entre la Garrotxa i la Selva, i el roure de Font d'Àliga situat a prop de la font del mateix nom. Què va passar amb els altres 7 arbres? De moment no se sap si són vius o morts, però és un assumpte pendent d’investigar i formarà part d’una altre història".
+La inscripció de Maria de Cabanyes gravada a una pedra l'honora el nostre Roure:
+"Ets un arbre ferm i altiu,
+que es va salvar d'una forta talada,
+amb el pas dels anys molt més joliu,
+desafiant el sol, el vent i la gebrada".
+</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Orús, E., (2007). 120 Grans Arbres del Pirineu Català i d'Andorra. Sant Vicenç de Castellet: Farell
+Plantipodes-AM (2023). Roure de la Xoriguera. Recuperat de https://www.plantipodes-am.cat/fitxes/rourexoriguera.html</p>
+
+        <div class="center">
+            <a href="../comarques/girona/la-garrotxa.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

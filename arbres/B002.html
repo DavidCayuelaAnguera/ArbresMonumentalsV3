@@ -1,0 +1,59 @@
+<!--
+Autor: David Cayuela Anguera
+Any: 2025
+Descripció: Fitxa de l'arbre monumental Alzina de Can Valls
+-->
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Alzina de Can Valls</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Alzina de Can Valls</h1>
+    </header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> B002</li>
+            <li><strong>Tàxon:</strong> Quercus ilex</li>
+            <li><strong>Tipologia:</strong> Solitari</li>
+            <li><strong>Terme municipal:</strong> Cerdanyola del Vallès</li>
+            <li><strong>Comarca:</strong> Vallès Occidental</li>
+            <li><strong>Propietat:</strong> Pública</li>
+            <li><strong>Classificació Etnoecològica:</strong> Espiritual</li>
+        </ul>
+        
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">Utilitzada antigament com a punt de reunió del poble.</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Boada i Boada (1994)</p>
+
+        <div class="center">
+            <a href="../comarques/vallesoccidental.html" class="back-button">Torna a la comarca</a>
+            <a href="../index.html" class="back-button">Torna a l'inici</a>
+        </div>
+    </main>
+
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

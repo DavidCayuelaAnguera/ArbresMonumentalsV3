@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Arboç de can Genoer</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Arboç de can Genoer</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM10.901.02</li>
+            <li><strong>Tàxon:</strong> Arbustus unedo</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Cruïlles, Monells i Sant Sadurní de l'Heura</li>
+            <li><strong>Comarca:</strong> El Baix Empordà</li>
+            <li><strong>Propietat:</strong> Privada  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Funcional - simbòlic, polític</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">Madrenes, 2004 cita: "Per tradició oral he sabut que fa 125 anys ja era gros, ja que l'avia d'en Ramon Sabater, pelador, fill del mas Matas, era filla de can Genoer i és l'edat que tindria el 1999, i deia que sempre l'havia vist gros.". Continua citant algunes llegendes que parlen d'un lladre que va ser penjat de l'Arboç pels voltants de la Guerra del Francès (1808-12), aleshores tindria molt més de 200 anys.</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Generalitat de Catalunya (2021). Arboç de can Genoer. Recuperat de https://mediambient.gencat.cat/ca/05_ambits_dactuacio/patrimoni_natural/arbres-monumentals/am_arbres_monumentals_fitxes/baix-emporda-4/arboc-de-can-genoer/index.html</p>
+
+        <div class="center">
+            <a href="../comarques/girona/el-baix-emporda.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

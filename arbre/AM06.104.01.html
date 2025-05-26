@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Roure d'Ancosa</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Roure d'Ancosa</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM06.104.01</li>
+            <li><strong>Tàxon:</strong> Quercus x cerriodes</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> La Llacuna (Plana d'Ancosa)</li>
+            <li><strong>Comarca:</strong> Anoia</li>
+            <li><strong>Propietat:</strong> Privada  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Ramaders - Amorriadors i ombrejadors / Místic</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">Aquest arbre va quedar enmig de la Plana d'Ancosa perquè a l'estiu hi anaven els ramats de bestiar a prendre l'ombra. A l'enforcadura té una cadolla on s'acumula  l'aigua de pluja. Un rètol explica que aquest roure amaga una vella ferida: un forat, mantingut durant anys, just a la creu de les seves branques principals. Des de temps antic es feia servir per practicar-hi un ritual a través del qual es protegia els nadons just després de néixer o aquells que patien de trencadura (hèrnia). Es tractava de ficar l’infant dins del forat tot pronunciant un conjur. D’aquesta manera es creia que el roure absorbia les malalties dels nens i els hi transferia el seu vigor i vitalitat.
+La cerimònia es realitzava principalment la nit de sant Joan. A un costat del roure hi havia el pare de la criatura i a l’altre el padrí, els quals amb el nen nu als braços deien: “Sant Joan Gloriós, trencat te’l dono. Sant Joan Gloriós, curat te’l prenc”. Aquestes paraules, que es pronunciaven mentre passaven el nen per dintre el forat, es repetien tres vegades. Per posar fi al ritual es dipositaven les espardenyes i la robeta del nen a dintre del forat i es tancava el tronc amb argila. L’èxit del ritual depenia de la salut del roure. Sembla ser que la majoria dels nens es van curar perquè, avui, el roure presenta una magnífica estampa i té molt bona salut.
+De l’antigor d’aquesta veneració al roure ja ens dona raó la mitologia romana. Júpiter  és el déu suprem del cel, cap del panteó i déu del llamp. L’element més representatiu d’aquest déu és el llamp; el seu animal sagrat, l’àguila, que es va convertir en un dels símbols més comuns als exèrcits romans i el seu arbre, el roure per la seva fortalesa i resistència.</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Josep Arasa i Ferrer. (2015). El Roure d'Ancosa. Recuperat de https://blocs.mesvilaweb.cat/elbarrinaire/el-roure-dancosa/</p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/anoia.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

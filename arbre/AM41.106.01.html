@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Arboç de Sant Esteve del Coll</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Arboç de Sant Esteve del Coll</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM41.106.01</li>
+            <li><strong>Tàxon:</strong> Arbutus unedo</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Llinars del Vallès</li>
+            <li><strong>Comarca:</strong> Vallès Oriental</li>
+            <li><strong>Propietat:</strong> Privada</li>
+            <li><strong>Classificació Etnoecològica:</strong> Polític, funcional - simbòlic</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">La seva història va íntimament lligada a la del poble de Sant Esteve del Coll.
+La Muntanya del Coll, amb els seus boscos, l'església parroquial, les seves masies, la Torrassa o Torre del Moro i la desapareguda ermita de Sant Sebastià han estat sempre objecte d'estima i admiració. L'arboç, en general, és una planta arbustiva i de les més abundants a la muntanya d'aquesta zona.
+Considerat centenari, l'arboç ha donat nom a una revista literària de la zona. També ha estat esmentat en articles a la premsa. La primera referència literària és de l'any 1934 a la publicació núm. 2 de la Societat d'Atracció de Forasters de Cardedeu, on llegim:
+"...l'Església del Coll,..., prop d'un magnífic exemplar de cirerer d'arboç, de corpulència extraordinària, cas raríssim en arbres d'aquesta naturalesa..."</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Generalitat de Catalunya (2021). Arboç de Sant Esteve del Coll. Recuperat de https://mediambient.gencat.cat/ca/05_ambits_dactuacio/patrimoni_natural/arbres-monumentals/am_arbres_monumentals_fitxes/valles-oriental-10/arboc-de-sant-esteve-del-coll-n/index.html 
+Orús,  E., (2001). Arboç de Sant Esteve del Coll. Dintre L’Aulet (1: 33)</p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/valles-oriental.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

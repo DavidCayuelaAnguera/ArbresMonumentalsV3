@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Boix de l'Esglèsia</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Boix de l'Esglèsia</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM41.137.01</li>
+            <li><strong>Tàxon:</strong> Buxus sempervirens</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Montseny</li>
+            <li><strong>Comarca:</strong> Vallès Oriental</li>
+            <li><strong>Propietat:</strong> Privada  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Funcional - simbòlic/ productor d'eines, religiós </li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">La fusta de boix ha estat emprada per diferents usos artesanals i artístics. Un dels més generalitzats ha estat l'obtenció de culleres, foorquilles i lloses. També és una fusta imprescindible per la producció de boixets, un singular estri per fer les puntes de coixí. 
+Situat al pati que hi ha al davant de l'Església del poble i envoltat d'una gran diversitat de flora, és un exemplar molt estimat per la gent del poble. El que va ser rector del poble de Montseny, Mn. Bonrepaux, va manifestar sempre la seva estima pel boix de l'església. L'any 1970 cridà l'atenció del botànic Pius Font i Quer que el volgué traslladar al pati de la Universitat de Barcelona. Finalment, però, no fou mogut.</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Boada, M. & Boada A., (2011). Boix de l'Església del Montseny. Dins Arbres remarcables de Catalunya. 100 ombres colossals. (pp. 240-241) Figueres.: Brau
+Generalitat de Catalunya (2022). Boix de l’Església. Recuperat de https://mediambient.gencat.cat/ca/05_ambits_dactuacio/patrimoni_natural/arbres-monumentals/am_arbres_monumentals_fitxes/valles-oriental-10/boix-de-lesglesia/index.html</p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/valles-oriental.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

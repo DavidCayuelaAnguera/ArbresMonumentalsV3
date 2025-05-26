@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Roures de la Torre II</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Roures de la Torre II</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM19.208.02</li>
+            <li><strong>Tàxon:</strong> Quercus robur  </li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Vall de Bianya  </li>
+            <li><strong>Comarca:</strong> La Garrotxa</li>
+            <li><strong>Propietat:</strong> Privada</li>
+            <li><strong>Classificació Etnoecològica:</strong> Ornamental - artístic, Ramader - amorriador i ombrejador</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">Ens indiquen que les ovelles, quan hi havia grans ramats, s'hi aplegaven a sota, com també en altres grans roures que hi havia a la zona. El gran pintor Joaquim Vayreda (1843-1894) ha deixat quadres amb aquests paisatges. Un d'aquests, anomenat "Els roures de Bianya", fa referència als que hi ha a la finca de la Torre, de la qual la seva família era propietària, i que els seus descendents conserven.</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Arbres amb història. (2011). Roureda monumental de la Torre. Recuperat de https://arbresambhistoria.blogspot.com/2011/03/roureda-monumental-de-la-torre.html</p>
+
+        <div class="center">
+            <a href="../comarques/girona/la-garrotxa.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+arbres-monumentals/
+│
+├── index.html              ← pàgina principal
+├── barcelona.html          ← pàgina de província Barcelona
+├── girona.html             ← pàgina de província Girona
+├── comarques/              ← pàgines de comarques
+│   ├── barcelones.html
+│   └── ...
+├── arbres/                 ← pàgines individuals d’arbres
+│   ├── arbre-1.html
+│   └── ...
+├── votacio.html            ← pàgina de votació
+├── css/
+│   └── style.css           ← full d'estils
+├── js/
+│   ├── main.js             ← codi JavaScript general
+│   ├── votacio.js          ← script per votacions
+│   └── dades.js            ← càrrega i gestió de JSON
+├── data/
+│   ├── arbres_barcelona.json
+│   ├── arbres_girona.json
+│   └── arbres_complert.json
+├── images/
+│   └── fons.jpg            ← imatge de fons (o la que vulguis)
+└── LICENSE.txt             ← Creative Commons BY

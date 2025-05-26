@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Pi Gros de la masia d'en Cabanyes</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Pi Gros de la masia d'en Cabanyes</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM17.307.01</li>
+            <li><strong>Tàxon:</strong> Pinus pinea</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Vilanova i la Geltrú</li>
+            <li><strong>Comarca:</strong> Garraf</li>
+            <li><strong>Propietat:</strong> Pública  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Funcional - simbòlic, ornamental artístic</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">Anomenat Pi Gros per les dimensions, creix a uns 250 m al nord de la masia on va viure el poeta romàntic Manuel de Cabanyes (1808-1833).
+El Pi Gros ja es representava com a monumental en dibuixos i pintures d’aquella època.
+La Masia d’en Cabanyes és casa-museu, on va viure el poeta romàntic Manuel de Cabanyes i actualment acull el Centre d’Interpretació del Romanticisme.</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Generalitat de Catalunya (2021). Pi Gros de Vilanova i la Geltrú. Recuperat de https://mediambient.gencat.cat/ca/05_ambits_dactuacio/patrimoni_natural/arbres-monumentals/am_arbres_monumentals_fitxes/garraf-3/pi-gros-de-vilanova-i-la-geltru/index.html</p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/garraf.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Alzina del Mas Pujol</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Alzina del Mas Pujol</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM07.010.01</li>
+            <li><strong>Tàxon:</strong> Quercus ilex ilex</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Artés</li>
+            <li><strong>Comarca:</strong> El Bages</li>
+            <li><strong>Propietat:</strong> Privada</li>
+            <li><strong>Classificació Etnoecològica:</strong> Funcional - simbòlic, atractors turístics</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">La vella alzina ha estat testimoni del pas del temps i ha vist com es transformava l'entorn amb la construcció de l'Eix Transversal. Des de fa anys, és l'espai escollit per fer una trobada anual de caràcter literari, organitzada pel "Raïm de poesia", cada 11 de setembre. S'hi reciten poemes i es fan concerts.</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Generalitat de Catalunya (2021). Alzina del Mas Pujol. Recuperat de https://mediambient.gencat.cat/ca/05_ambits_dactuacio/patrimoni_natural/arbres-monumentals/am_arbres_monumentals_fitxes/bages-5/alzina-del-mas-pujol/index.html</p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/el-bages.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

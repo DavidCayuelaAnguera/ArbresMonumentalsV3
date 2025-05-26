@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Roure de Can Codorniu</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Roure de Can Codorniu</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM03.240.01</li>
+            <li><strong>Tàxon:</strong> Quercus x cerriodes</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Sant Sadurní d'Anoia</li>
+            <li><strong>Comarca:</strong> Alt Penedès</li>
+            <li><strong>Propietat:</strong> Privada  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Funcional - simbòlic / alimentaris</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">És un dels roures més coneguts, sinó el que més, de tota Catalunya. Presideix l'ampla plaça i és un símbol per a les caves "Raventós i Blanc" i per a tot Sant Sadurní. Malauradament, el 10 abril 2009 es va tombar, tot i que de moment segueix viu.
+Té una llarga història (segons alguns de 350 anys, segons uns altres, de 500) i tradició familiar, que es fa palesa en la presència del roure a molts documents oficials relacionats amb Can Codorniu, com escriptures, actes i, fins i tot, esqueles i novel·les autobiogràfiques. Destaca la cita a "La vida al camp. Memòries d'un cabaler": "...però tots els arbres, callen i aguanten l'alè davant el roure gros a tres-centes passes del portal del pati de la casa. (...). Això sí que és un arbre!" [en le llenguatge de l'escriptor, Jaume Raventós, "Can Feliu" representa la seva casa pairal: Can Codorniu].
+La figura del Roure s'ha utilitzat molt al si de la família i les ampolles de vi i cava també el porten. El 1987 la Junta d'acionistes de "Raventós i Blanc" inclou l'acord: "...Són funcions específiques del Consell d'Administració la cura i conservació del roure centenari anomenat "Roure de Can Codorniu", ... Testimoni i símbol de l'activitat vitivinícola...". L'any 1987 es va contruir el mur que envolta el pati on hi ha el Roure Banyarriquer del roure (Cerambyx cerdo).
+L'Alzina de Can Ros (Subirats) es considerava la seva núvia, ja que es veien l'un a l'altre, malgrat la gran distància que els separava (4km, en linea recta): "Hi ha qui diu que el roure de "can Feliu" i l'alzina de can Ros fa cent anys que estan enamorats l'un de l'altra; no sé què m'hi digui: jo me'ls miro... me'ls miro... i més aviat diria que es guaiten amb enveja i, si es podien haver i no estiguessin a tres hores de distància de l'un a l'altra..." El roure enamorat es refereix al Roure de Can Codorniu.
+"Can Feliu" és el nom que J. Raventós dóna a Can Codorniu a "Memòries de un cabaler".</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Generalitat de Catalunya. (2021). Roure de Can Codorniu. Recuperat de https://mediambient.gencat.cat/ca/05_ambits_dactuacio/patrimoni_natural/arbres-monumentals/am_arbres_monumentals_fitxes/alt-penedes-3/roure-de-can-codorniu-nd/index.html 
+Moya, B., Plumed, J. & Moya, J., (2003). Árboles monumentales de España. Madrid: Compañía Logística de Hidrocarburos CLH, SA & Godella (p. 274) Valencia: Unoediciones.
+Plantipodes-AM (2023.). Roure de Can Codorniu. Recuperat de
+https://www.plantipodes-am.cat/fitxes/rourecancodorniu.html</p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/alt-penedes.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

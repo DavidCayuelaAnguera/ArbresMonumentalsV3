@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Alzina de can Pedró</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Alzina de can Pedró</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM40.156.01</li>
+            <li><strong>Tàxon:</strong> Quercus ilex ilex</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Palau-solità i Plegamans</li>
+            <li><strong>Comarca:</strong> Vallès Occidental</li>
+            <li><strong>Propietat:</strong> Pública  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Polític, arbre mare, funcional - simbòlic</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">Segons la tradició oral, fa uns tres-cents anys va esclatar una forta tempesta, i un llamp va caure sobre una immensa alzina i la va ferir de mort. Els antics habitants de Palau hi van plantar al mateix lloc un aglà d'aquell arbre com a testimoni de continuïtat, i hi va néixer l'alzina de can Padró. Morta 2004. L'Alzina de can Padró va ser, durant molts anys, l'emblema del municipi i testimoni de molts esdeveniments de la vida dels palauencs. Es calcula que tenia uns 250 anys quan va morir.
+Des de l'any 1928, i durant moltes festes majors, sota les seves branques s'hi instal·lava l'envelat. També va ser escenari de diades sardanistes i d'altres actes culturals. Durant uns anys va ser el lema del segell oficial de l'Ajuntament.
+Va créixer al mig del pla, envoltada de camps de conreu que es regaven abundosament. Pels volts de la dècada dels anys 60 del segle passat es va fer vella, i la urbanització progressiva del seu entorn (cotxes, ciment, manca d'espai...) va contribuir a la seva davallada i, tot i que es van fer esforços per salvar-la, no es va recuperar.</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Ajuntament de Palau-solità i Plegamans (2023). L’Alzina de Can Padró: història d’un símbol. Recuperat de https://www.palauplegamans.cat/actualitat/pln17/l-alzina-de-can-padro-historia-d-un-simbol
+Diputació de Barcelona (s.d.). Llegenda de l’Alzina can Padró. Palau-solità i Plegamans. Recuperat de https://patrimonicultural.diba.cat/element/llegenda-de-lalzina-can-padro </p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/valles-occidental.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>
