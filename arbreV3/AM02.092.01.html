@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Arbre de la Llibertat</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Arbre de la Llibertat</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM02.092.01</li>
+            <li><strong>Tàxon:</strong> Platanus × hispanica</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Llançà</li>
+            <li><strong>Comarca:</strong> Alt Empordà</li>
+            <li><strong>Propietat:</strong> Pública</li>
+            <li><strong>Classificació Etnoecològica:</strong> Polítics</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">La plantació d'arbres simbolitzant la llibertat dels homes i de les societats correspon a un concepte que es va difondre bàsicament a partir de la revolució francesa de l'any 1789. Segons un poema de Pere Purcallas, exalcalde de la vila de Llançà, l'arbre fou plantat l'any 1870. Aquesta dada contrasta clarament amb l'any gravat al sòcol original, 1684. Popularment es creu que aquest element pertanyia al brocal d'un pou públic situat a la plaça Major, que posteriorment es convertí en una font, mitjançant la col·locació d'una cúpula de pedra i una bomba per extreure aigua. El brocal no es podia mantenir i fou col·locat com a socalada de l'arbre.
+El 1987 fou declarat Arbre Monumental per la Generalitat de Catalunya. Després de la Revolució Francesa, el plàtan fou considerat l'arbre que simbolitzava la Llibertat i sota aquest ideal fou plantat a molts llocs. És per això que al final de la Guerra Civil (1936-1939) un escamot de soldats dedicat a la supressió de símbols liberals l'anava a tallar, però va ser aturat pel rector, que hagué de fer valer el seu grau militar de capellà castrense per salvar el gran arbre de la plaça.</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Generalitat de Catalunya (s.d..). L'arbre de la llibertat. Recuperat de https://invarquit.cultura.gencat.cat/card/19794</p>
+
+        <div class="center">
+            <a href="../comarques/girona/alt-emporda.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

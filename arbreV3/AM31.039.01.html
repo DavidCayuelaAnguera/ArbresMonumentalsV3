@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Auró del Remei</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Auró del Remei</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM31.039.01</li>
+            <li><strong>Tàxon:</strong> Acer campestre</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Camprodon (Creixenturri)</li>
+            <li><strong>Comarca:</strong> El Ripollès</li>
+            <li><strong>Propietat:</strong> Pública  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Religiós, polític</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">L’Auró ha vist com fidels peregrins de la Vall de Camprodon
+i rodalies venien a donar gràcies i demanar favors a la Mare de Deu del Remei.
+També ha vist com una guerra fratricida (1936-39) destrossava el temple, mentre els homes es
+mataven a trets pels seus voltants. I poc després va viure intensament la retirada en la que moltíssima gent es varen veure obligats a passar per la Vall de Remei de Creixenturri per escapar cap a França, ja que el camí principal aviat va quedar bloquejat. Carme de Visa-Sitjar i de Sitjar li va dedicar el poema:
+El vell Auró (del Remei):
+"Ai gran arbre cansat,
+els anys i anys que han passat,
+en mig de fortes ventades,
+de terribles xafegades,
+la forta erosió del teu niu,
+el sol calent a l'estiu,
+i a l'hivern el fred intents.
+Per esculpir a consciència,
+eixa gran magnificència,
+que s'ha format amb el temps."</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Generalitat de Catalunya (2022). Auró del Remei. Recuperat de https://web.archive.org/web/20160911050604/http://parcsnaturals.gencat.cat/web/.content/home/coneix-nos/arbres_monumentals/arbres_monumentals_fitxes/ripolles/auro_del_remei/auro_del_remei_fitxa.pdf
+Plantipodes-AM (2024). Auró del Remei. Recuperat de https://www.plantipodes-am.cat/fitxes/aurodelremei.html</p>
+
+        <div class="center">
+            <a href="../comarques/girona/el-ripolles.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

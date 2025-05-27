@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Mata de la Mata</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Mata de la Mata</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM17.231.02</li>
+            <li><strong>Tàxon:</strong> Pistacia lentiscus</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Sant Pere de Ribes  </li>
+            <li><strong>Comarca:</strong> Garraf</li>
+            <li><strong>Propietat:</strong> Privada  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Místic</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">La Mata, ella sola, constitueix un bosquet de 16 x 16 m on hi ha 6 peus que pugen i baixen en formes recargolades. Ja és citat l'any 1871, com a exemplar destacat, al llibre "Flora farmacéutica de España y Portugal". També el Dr. Pius Font i Quer el cita a la seva obra "Plantas Medicinales. El Dioscórides renovado".
+La Mata està situada a la banda nord de la carretera C246a (a Sitges) km 40,1, al costat d'un pou i d'una via romana. Explica la llegenda que fa molts anys (segle XIX), a l'indret on actualment hi ha la masia de la Mata, hi residia una bruixa. Vivia en una petita cova excavada sota el llentiscle o mata, magnífic exemplar que encara podem contemplar en l'actualitat. La seva fama residia en els sortilegis i filtres que preparava, especialment els destinats a l'amor o el desamor. Arreu de la contrada tothom coneixia la bruixa i els seus elixirs fins que, sobtadament, va desaparèixer.</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Diputació de Barcelona (s.d.). Llegenda de la bruixa de la Mata. Recuperat de  https://patrimonicultural.diba.cat/element/llegenda-de-la-bruixa-de-la-mata 
+Plantipodes-AM (2023). Mata de la Mata. Recuperat de https://www.plantipodes-am.cat/fitxes/matamata.html</p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/garraf.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

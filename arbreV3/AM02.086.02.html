@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Faig de la Pedra</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Faig de la Pedra</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM02.086.02</li>
+            <li><strong>Tàxon:</strong> Fagus sylvatica</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> La Jonquera</li>
+            <li><strong>Comarca:</strong> Alt Empordà</li>
+            <li><strong>Propietat:</strong> Privada</li>
+            <li><strong>Classificació Etnoecològica:</strong> Funcional - simbòlic</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">EL Faig de la Pedra és un exemplar de grans dimensions que suporta una pedra de granit d’uns 700 kg a la bifurcació d’una de les besses principals a uns 3 metres de terra.  La cultura popular autòctona ha donat una explicació llegendària d’homes forçuts i ferrenys: Contaven els avis que fa uns 100 o 200 anys, el masover del mas de Mirapols i el del mas de les Vinyasses estaven enfrontats, els dos masos es troben equidistants del Faig. En els màxims moments de crisi i empipament, per descarregar la seva còlera tenien el costum, forts com eren, de tirar-se pedres des de cada mas. La pedra del Faig seria doncs, fruit d’aquestes baralles, una roca que afortunadament no arribà al seu objectiu. (Llegenda explicada per Tomàs Masó a Lluís Serrano, 2011)</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Generalitat de Catalunya (s.d.). Faig de la Pedra. Recuperat de https://mediambient.gencat.cat/ca/05_ambits_dactuacio/patrimoni_natural/arbres-monumentals/am_arbres_monumentals_fitxes/alt-emporda-12/faig-de-la-pedra/index.html</p>
+
+        <div class="center">
+            <a href="../comarques/girona/alt-emporda.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

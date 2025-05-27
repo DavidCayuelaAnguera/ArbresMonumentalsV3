@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Roure del Pla del Call</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Roure del Pla del Call</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM24.903.01</li>
+            <li><strong>Tàxon:</strong> Quercus pubescens</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Rupit i Pruit</li>
+            <li><strong>Comarca:</strong> Osona</li>
+            <li><strong>Propietat:</strong> Privada  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Polític, religiós, funcional - simbòlic</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">Aquest Roure és l'hereu del Roure de la Mare de Déu del Roure, al qual Jacint Verdaguer (finals s. XIX) li va dedicar les "Cobles de la Verge del Roure". En origen, el pedró de la Mare de Déu del Roure consistia en una capelleta oberta en el tronc d’un roure que albergava la imatge de la verge al seu interior. Estava situat a l’antic camí que comunicava Cantonigròs amb Pruit i Rupit, força desdibuixat actualment. La primera referència documental d’aquest pedró la recull el folklorista català Joan Amades. Es tracta de la reproducció d’una estampa datada al segle XVIII. Segons sembla, la imatge fou trobada per un pastor dins la soca d’un roure i, per venerar-la, s’optà per obrir la capelleta en el tronc del mateix arbre. A finals del segle XIX, la devoció envers aquesta imatge s’incrementà gràcies a la participació del poeta mossèn Jacint Verdaguer en els actes relacionats amb aquest culte (el poeta s’hostatjava a la masia del Bac, propietaris del pedró, i participà en diverses ocasions de l’aplec que s’hi celebrava). Durant el conflicte bèl·lic de la guerra Civil espanyola, la imatge fou destruïda i la capelleta i el roure cosits a trets. Passada la guerra, el propietari del Bac va restaurar la capella i en restituí la imatge. Posteriorment, el roure s’assecà i morí.
+L'Aplec se celebra el 8 de setembre, diada de les Marededéus trobades</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Ajuntament de Rupit i Pruit (2010). Roure del Bac de Collsacabra. Dintre de Catàleg de Bens a protegir  POUM. (p. 353)
+Plantipodes-AM (2023). Roure del Pla de Call. Recuperat de https://www.plantipodes-am.cat/fitxes/rourecall.html</p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/osona.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

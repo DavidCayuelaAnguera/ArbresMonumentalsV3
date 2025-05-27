@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Roure d'Engelats</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Roure d'Engelats</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM31.037.02</li>
+            <li><strong>Tàxon:</strong> Quercus petraea</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Campelles</li>
+            <li><strong>Comarca:</strong> El Ripollès</li>
+            <li><strong>Propietat:</strong> Privada  </li>
+            <li><strong>Classificació Etnoecològica:</strong> </li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">“...és un roure magnífic que té més de 25 m. d’alçària i el seu tronc, a 1,50 m. del sòl, amida 4,70 m. de perímetre”. Estem, doncs, davant un exemplar de roure que no té que envejar res al roure de Vilardell, al de Perramon o el roure Galanic de les Llosses.
+Val dir que el lloc d’Engelats ja apareix en la primera documentació escrita de Campelles de l’any 918, on s’esmenta el lloc de Engelados dins del terme de la vila rural de Campillas.
+</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Generalitat de Catalunya (2022). Roure d’Engelats. Recuperat de https://mediambient.gencat.cat/ca/05_ambits_dactuacio/patrimoni_natural/arbres-monumentals/am_arbres_monumentals_fitxes/ripolles-9/roure-dengelats/index.html
+Vinyeta, R. (1985). El Roure d'Angelats. Dins Arbres monumentals de Catalunya. (p. 52) Torelló: Celblau.</p>
+
+        <div class="center">
+            <a href="../comarques/girona/el-ripolles.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

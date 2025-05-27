@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Pineda de can Ferrer del Coll</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Pineda de can Ferrer del Coll</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> DM06.161.01(1995)</li>
+            <li><strong>Tàxon:</strong> Pinus halepensis, P. pinea</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Piera</li>
+            <li><strong>Comarca:</strong> Anoia</li>
+            <li><strong>Propietat:</strong> Pública</li>
+            <li><strong>Classificació Etnoecològica:</strong> Funcional - simbòlic</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">Pineda excepcional amb els pins més alts que s'han mesurat a Catalunya. Es troba situat dins l'espai 'interès natural (EIN) de les Valls de l'Anoia.
+El vendaval Klaus (2009.01.24) va fer caure i malmetre diversos arbres de la Pineda. Constitueix un lloc habitual d'aplecs. </p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Generalitat de Catalunya (s.d.). Pineda de Can Ferrer del Coll. Recuperat de https://mediambient.gencat.cat/ca/05_ambits_dactuacio/patrimoni_natural/arbres-monumentals/am_arbres_monumentals_fitxes/anoia-5/pineda-can-ferrer-del-coll/index.html</p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/anoia.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

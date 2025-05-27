@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Roure dels Capellans o Roure de la Font del Bac</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Roure dels Capellans o Roure de la Font del Bac</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM02.003.01</li>
+            <li><strong>Tàxon:</strong> Quercus pubescens</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Albanyà</li>
+            <li><strong>Comarca:</strong> Alt Empordà</li>
+            <li><strong>Propietat:</strong> Pública</li>
+            <li><strong>Classificació Etnoecològica:</strong> Funcional - simbòlic</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">Darrers roures que queden en peu ja que s'utilitzaren per fer travesses de tren. És el roure de més volt de canó de Catalunya.. Es deia: "Per abraçar-lo es necessiten set capellans". Segons deia Martí Renart o Martí de les Arcades (1960): "És tan gros que caldria un xurrac de 22 pams per xurracar-lo".</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Generalitat de Catalunya (s.d.). Roure dels Capellans (Roure de la Font del Bac). Recuperat de https://mediambient.gencat.cat/ca/05_ambits_dactuacio/patrimoni_natural/arbres-monumentals/am_arbres_monumentals_fitxes/alt-emporda-12/roure-dels-capellans-roure-de-la-font-del-bac/index.html 
+Amics arbres (2018.). Recuperat de https://amicsarbres.blogspot.com/2018/02/arbres-emblematics-simbolics.html</p>
+
+        <div class="center">
+            <a href="../comarques/girona/alt-emporda.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

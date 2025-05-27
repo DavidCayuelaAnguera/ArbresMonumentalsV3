@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Sequoia roja del Noguer</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Sequoia roja del Noguer</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM24.320.01</li>
+            <li><strong>Tàxon:</strong> Sequoia sempervirens</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Viladrau</li>
+            <li><strong>Comarca:</strong> Osona</li>
+            <li><strong>Propietat:</strong> Privada  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Ornamental - jardí</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">A l'entorn de la casa pairal del MAS NOGUER de VILADRAU trobem un petit «arboretrum», que creiem interessant d'estudiar. La majoria d'arbres no són autoctons i van ser plantats pel meu avi Ramon Bofill Galles, fill de Viladrau, la majoria a l'any 1898, data legitimada perla factura que reprodu!m, trobada fa alguns anys en ordenar l'arxiu de la casa. Com que Ramon Bofill Galles va estudiar la carrera d'odontoleg a la Facultat de la Sorbona de París i va treballar allí durant tres anys, és possible que la visió dels arbres d'aquella gran ciutat el portessin a la plantació d'algunes especies a la seva casa de Viladrau. El primer nom que va rebre < Sequoia > sembla ser que és derivat d'un cap de les tribus del «Pelis Roges» que es deia Sequoyah, indi de sang creuada (pare aleman i mare cherokee), el qua! inventa al 1821 un sistema d'escriptura. Encara que el nom de < Sequoia > és el nom científ ic més anti e, el botanics anglesos van decidir al 1853 canviar-lo per Wellingtonia dedicat al seu famós militar: pero logicament els botanics americans no els entusiasma la idea i van pensar que si es volia dedicar en honor d'un gran soldat, aquest hauria de ser George Washington i li van dir Washingtonia en 1854. Finalment els botanics han considerats que fóra millor dir-li Sequoiadendrom giganteum. </p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Bofill, R,. (1990). Els arbres de mas Noguer de Viladrau. Dintre de Monografies del Montseny. Viladrau: Cedel (núm. 5) (pp. 187-203)</p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/osona.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

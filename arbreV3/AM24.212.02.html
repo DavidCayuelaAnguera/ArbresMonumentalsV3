@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Faig de Can Font</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Faig de Can Font</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM24.212.02</li>
+            <li><strong>Tàxon:</strong> Fagus sylvatica</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Vidrà</li>
+            <li><strong>Comarca:</strong> Osona</li>
+            <li><strong>Propietat:</strong> Privada  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Funcional - simbòlic, ramader - amorriador i ombrejador</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">Mort el 2023. Al igual que el faig del Pla Petit, son dels pocs arbres de la zona que es van salvar alhora de fer conreus. Servien per zones de descans i ombra de pastura.</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Generalitat de Catalunya (2022). Faig de Can Font. Recuperat de https://mediambient.gencat.cat/ca/05_ambits_dactuacio/patrimoni_natural/arbres-monumentals/am_arbres_monumentals_fitxes/osona-30/faig-de-can-font/index.html</p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/osona.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Faig de la Baga del Gresolet o Faig Setrill</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Faig de la Baga del Gresolet o Faig Setrill</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM14.190.06</li>
+            <li><strong>Tàxon:</strong> Fagus sylvatica</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Saldes</li>
+            <li><strong>Comarca:</strong> El Berguedà</li>
+            <li><strong>Propietat:</strong> Pública  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Polític, funcional - simbòlic, productors d'eines</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">La vall de Gresolet, que formava part del territori feudal de la baronia de Pinòs i Mataplana, va ser cedit en vassallatge als senyors de Josa, els quals el traspassaren al segle XII al senyors de Faia, que tenien el seu castell al costat del riu Bastareny, més avall de l'ermita del Puig. Degut al despoblament originat per la destrucció del poble, abundaren els litigis per l'ús de les pastures i l'aprofitament forestal de la vall entre els habitants de Saldes i els senyors de la vall.
+El Bosc de Gresolet és indivís i fou cedit pels antics senyors de Bagà al municipi de Saldes, L'1 de febrer de 1843, la família Còdol va lliurar en emfiteusi el bosc de Gresolet, als capmassats de Saldes i Massaners, una propietat comunal entre els 112 caps de casa. Tots els habitants caps de casa (Capmassats) d'aquest poble són copropietaris d'aquesta massa forestal; és a dir, que individualment només poden explotar el bosc a mesura de les seves necessitats domèstiques, però no comercials. És per aquest motiu que, entrant al segle xx, aquesta gran massa arbòria, s'havia mantingut íntegra.
+L'any 1920 L'intent de compra per part de la companyia "Sociedad Anónima Carbones de Berga", propietat de la família Olano (comtes de Fígols), del Bosc va protagonitzar la primera de les lluites conservacionistes a Catalunya l'any 1921. L'empresa pretenia explotar el bosc durant 10 anys i a canvi construir un ferrocarril que servís als propietaris per extreure torba i betum mineral de la zona. El geògraf Cèsar August Torras també reclamava a l'època que el bosc de Gresolet fos declarat Parc Nacional de Catalunya.
+Inicialment, el 6 de desembre de 1920 es van vendre aquest bosc al Sr. Olano, però hi havia un ambient d'oposició en tot el país a fi d'evitar aquella venda. El 17 d'abril de 1921, el Districte forestal de Barcelona, Girona i Balears va instruir un expedient d'investigació i classificació de la forest de Gresolet, on recopilades totes les dades i reclamacions referents a l'esmentat bosc, va declarar que deixava anul·lada la seva venda i va fixar, definitivament que tots els habitants de Saldes i de Massaners tenien participació ex aequo en l'usdefruit del bosc de Gresolet, i aquest fou declarat d'utilitat pública.
+La venda fou impugnada, el 4 de desembre de 1924, per una part dels capmassats, ajudats per altres entitats, la més important de les quals va ser el Centre Excursionista de Catalunya. De moment, es va aturar, la venda. Aquest plet per l'aprofitament forestal, es va perllongar durant més de vint anys fins que, després de la guerra civil, el nou règim polític donà via lliure a l'explotació de la fusta del bosc, amb la qual cosa van desaparèixer la major part dels millors exemplars d'arbres existents. Del 30 de desembre de 1941 fins al 1957 tornen a sorgir els plets. S'arriba a un acord que donava l'explotació del bosc al Sr.Olano, per vint anys, i podia treure'n 300.000 m³ de fusta tallada i desbrancada, molt més del que donava de si el bosc. Entre 1943 i 1950 es talen 24.491,84 m³ de fusta. El 1957 es torna a limitar la tala.
+L'aprofitament de fustes a càrrec de del Sr. Olano va finalitzar a finals de la dècada dels anys 60 que una vegada espoliat tot el bosc va desistir de continuar. No es va construir el tren inicial previst, i la compensació contractual va ser fer la portada de llum a Massaners i Saldes, la construcció d'una pista forestal fins al mateix Santuari de Gresolet i la venda de la fusta, d'aquest bosc verge, es va fer amb un preu tancat, durant tot el període, de 10 pessetes per Tona.</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Parés, E. & Rius, M.,  (2020). Un Avet del Bosc de Gresolet, l’Arbre de Nadal de Catalunya 2020 (II) Recuperat de https://agriculturadecatalunya.blogspot.com/2020/12/un-avet-del-bosc-de-gresolet-larbre-de_31.html</p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/el-bergueda.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

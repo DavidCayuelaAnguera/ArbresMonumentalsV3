@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Lledoner del mas Lledoner</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Lledoner del mas Lledoner</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM11.068.01</li>
+            <li><strong>Tàxon:</strong> Celtis australis</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Cervelló</li>
+            <li><strong>Comarca:</strong> El Baix Llobregat</li>
+            <li><strong>Propietat:</strong> Privada  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Funcional - simbòlic</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">Un lledoner històric donà nom a la finca i a la capella de Sant Francesc del Lledoner (obra del 1558, en relació amb la llegenda que explica que Francesc d'Assís féu estada en aquest mas). L’actual Lledoner està situat al pati, la casa és de 1777. A començaments de segle, a la creu del tronc hi havia una plataforma de ciment amb una caseta.</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Generalitat de Catalunya (2021). Lledoner del Mas Lledoner. Recuperat de https://mediambient.gencat.cat/ca/05_ambits_dactuacio/patrimoni_natural/arbres-monumentals/am_arbres_monumentals_fitxes/baix-llobregat-4/lledoner-del-mas-del-lledoner/index.html</p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/el-baix-llobregat.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

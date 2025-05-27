@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Roure del Parc de ca n'Oriol</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Roure del Parc de ca n'Oriol</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM40.184.01</li>
+            <li><strong>Tàxon:</strong> Quercus pubescens</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Rubí</li>
+            <li><strong>Comarca:</strong> Vallès Occidental</li>
+            <li><strong>Propietat:</strong> Pública  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Ramader - energètic, almentari</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">Mort el 2010. Els seus fruits, els glans, eren utilitzats per a donar de menjar al bestiar, especialment, als porcs. I la seva escorça era aprofitada per a extreure tanins per adoberia. És un exemplar que destaca més pel significat simbòlic (al trobar-se associat a la masia de ca n'Oriol) que per les seves dimensions. </p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Amics dels arbres (s.d.). Els arbres museu. Recuperat de https://amicsarbres.blogspot.com/2018/02/arbres-emblematics-simbolics.html
+Diputació de Barcelona (2000). Roure de ca n’Oriol. Recuperat de https://patrimonicultural.diba.cat/element/roure-de-ca-noriol</p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/valles-occidental.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

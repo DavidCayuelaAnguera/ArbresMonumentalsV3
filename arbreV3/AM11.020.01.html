@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Alzina de Puigvoltor</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Alzina de Puigvoltor</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM11.020.01</li>
+            <li><strong>Tàxon:</strong> Quercus ilex ilex</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Begues</li>
+            <li><strong>Comarca:</strong> El Baix Llobregat</li>
+            <li><strong>Propietat:</strong> Privada</li>
+            <li><strong>Classificació Etnoecològica:</strong> Productor d'eines, Funcional - simbòlic</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">El topònim Puigvoltor és documentat de forma contínua del 1458 al 1849, arriba fins el 1880. A partir de 1849 el topònim es comença a pervertir i es converteix en Puigmoltó.L’alzina de Puigmoltó, també anomenada de Puigvoltor, és un arbre inoblidable pel seu gruixut tronc bifurcat a baixa altura, una estructura que sembla respondre a antigues podes per a l’obtenció de carbó</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample"></p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/el-baix-llobregat.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

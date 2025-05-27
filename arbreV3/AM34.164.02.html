@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Cirerer del Soler de Mansolí</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Cirerer del Soler de Mansolí</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM34.164.02</li>
+            <li><strong>Tàxon:</strong> Prunus avium v. silvestris</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Sant Hilari Sacalm</li>
+            <li><strong>Comarca:</strong> La Selva</li>
+            <li><strong>Propietat:</strong> Pública  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Funcional - simbòlic</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">Mort el 2013. El Soler de Mansolí és una de les masies més destacades del municipi. És un gran casal amb solanes o galeries de cara a migdia, arrecerat en un replec del massís de Solterra, renovat al segle XVIII (1728, 1754 i 1771).
+Malgrat el trasbals de les guerres carlines, durant les quals fou convertit en hospital de campanya, i de la Guerra Civil, guarda vells teginats i mobles i és un bell exponent de la potència de la pagesia guillerienca del XVIII.</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Generalitat de Catalunya (2022). Cirerer del Soler de Mansolí. Recuperat de https://mediambient.gencat.cat/ca/05_ambits_dactuacio/patrimoni_natural/arbres-monumentals/am_arbres_monumentals_fitxes/selva-17/cirerer-del-soler-de-mansoli-mi/index.html</p>
+
+        <div class="center">
+            <a href="../comarques/girona/la-selva.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

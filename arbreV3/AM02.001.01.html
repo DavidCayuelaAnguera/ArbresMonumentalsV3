@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Suro del mas Perxés</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Suro del mas Perxés</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM02.001.01</li>
+            <li><strong>Tàxon:</strong> Quercus suber</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Agullana</li>
+            <li><strong>Comarca:</strong> Alt Empordà</li>
+            <li><strong>Propietat:</strong> Privada  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Funcional - simbòlic</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">Aquest arbre, a part de la seva destacada importància monumental per les seves grans dimensions, té una remarcable significança històrica perquè va ser testimoni del tràgic final de la República Espanyola. Això és degut al fet que es troba molt a prop del coll del Portell, on hi havia un pas estratègic i clandestí que duia fins a França, país de destinació de milers d'exiliats; és per això que també és conegut com el suro de l'Exili.
+Aquest espectacular arbre ha estat testimonis de fets destacables dins de la nostra història recent, ja que mas Perxés, entre el 31 de gener i el 5 de febrer de l'any 1939, va ser l'última seu institucional de la política i la cultura catalanes a la República, acollint un bon grapat d'intel·lectuals i polítics catalans (fins a 200 persones) cap a l'exili: Lluís Companys, Pompeu Fabra, Joan Oliver, Mercè Rodoreda, etc. Durant la Guerra Civil (1936-1939), la finca va ser incautada. Es volia tallar l'arbre, però els llenyataires, que eren gent del poble, llançaren les picasses i es negaren en rodó a complir aquesta ordre.
+La població d'Agullana va ser, durant els segles XVIII, XIX i XX, un important centre de la indústria del suro, arribant a tenir, a inicis del segle XX, fins a quaranta fàbriques sureres, fent valdre una altra gran tasca de les alzines sureres de la població.</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Boada, M. & Boada A., (2011). Suro de Mas Perxés. Dins Arbres remarcables de Catalunya. 100 ombres colossals. (pp. 50-51) Figueres: Brau. 
+Generalitat de Catalunya (s.d.). Suro de Mas Perxés. Recuperat de https://mediambient.gencat.cat/ca/05_ambits_dactuacio/patrimoni_natural/arbres-monumentals/am_arbres_monumentals_fitxes/alt-emporda-12/suro-del-max-perxes/index.html
+Salines Bassegoda (s.d.). Suro de Mas Perxés. Recuperat de https://www.salines-bassegoda.org/ca/natura/arbres-monumentals/suro-del-mas-perxes/. </p>
+
+        <div class="center">
+            <a href="../comarques/girona/alt-emporda.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

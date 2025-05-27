@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Avet de les Molleres de Gresolet</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Avet de les Molleres de Gresolet</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM14.190.01</li>
+            <li><strong>Tàxon:</strong> Abies alba</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Saldes</li>
+            <li><strong>Comarca:</strong> El Berguedà</li>
+            <li><strong>Propietat:</strong> Pública  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Polític, funcional - simbòlic, productors d'eines</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">Provant de resumir molt, la història de la vall de Gresolet passa per formar part del territori feudal de la baronia de Pinós i Mataplana, i pels senyors de Faia al segle XII que tenien el seu castell al costat del riu Bastareny, més avall de l'ermita del Puig. Els conflictes per l’aprofitament del bosc i la pastura foren corrents entre els habitants de Saldes i els senyors de la vall.
+El cert és que en el 2n decenni del segle passat es produeixen una sèrie de fets que acaben en l'explotació que es va emportar la major part dels millors exemplars d'arbres de la massa forestal de Gresolet. Hi està implicada la Sociedad Carbones de Berga (propietat del comte de Fígols) que volia comprar i explotar el bosc durant 10 anys, la qual cosa fomentà un ambient d'oposició. L’administració forestal va instruir un expedient d'investigació. La venda fou impugnada (1924) per una part dels capmasats, ajudats per altres entitats, la més important de les quals va ser el Centre Excursionista de Catalunya. Durant els 20 anys següents l’explotació no es va dur a terme. Després de la guerra civil, es va permetre l'explotació de la fusta i en conseqüència van desaparèixer la major part dels millors exemplars d'arbres existents. Després de més plets no fou fins a finals dels anys 60 que es poder aturar, però el dany ja estava fet. 
+No cal molta imaginació per declarar que l’Avet de les Molleres és un supervivent del Bosc de Gresolet, que ha sobreviscut als fets esmentats que van passar a “casa seva”, a la seva contrada.
+Arbre de Nadal de Catalunya de 2020. 
+Centenari,
+Però amatent al nostre pas
+De boscans caminadors,
+L’Avet de les Molleres ens albira;
+El Pedraforca li és baluard
+I Gresolet —el bosc—, casal,
+Sota un cel immaculat.
+Davant l’arbre monumental
+Respirem la solitud,
+I endinsats en el seu misteri
+Ressona la grandesa de la natura
+En l’espessor d’avets i faigs.
+Ferma branca vertical
+Arrelada amb patiment
+L'Avet de les Molleres eleva.
+Quins extasiants moments
+Entre gemecs de fulles i
+Teixit d’arrels a sota els peus!
+Instants presents de llarga vida,
+La seva, Ens fem nostres al seu costat
+Vivint-los ensems.
+M. Comas i M. Rius, 2020</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Parés, E. & Rius, M.,  (2020). Un Avet del Bosc de Gresolet, l’Arbre de Nadal de Catalunya 2020 (II) Recuperat de https://agriculturadecatalunya.blogspot.com/2020/12/un-avet-del-bosc-de-gresolet-larbre-de_31.html</p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/el-bergueda.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

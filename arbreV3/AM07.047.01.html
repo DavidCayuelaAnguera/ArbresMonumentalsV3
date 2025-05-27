@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Pi del Rèvol</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Pi del Rèvol</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM07.047.01</li>
+            <li><strong>Tàxon:</strong> Pinus nigra salzmannii</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Cardona</li>
+            <li><strong>Comarca:</strong> El Bages</li>
+            <li><strong>Propietat:</strong> Pública  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Funcional - simbòlic , polític, productor d'eines</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">Mort. Pineda mes alta del moment de Catalunya. Li va caure un llamp al damunt. Es va donar permís per tallar-lo (El Pi era mort des de l'incendi de 1998): "El 22 de gener de l’any 2000, el senyor Rafael Garriga, actual propietari de la casa de Palà de Coma, va decidir tallar-lo. Amb l’arbre es van fer taulons i finalment l’any 2006 quan la fusta va ser prou seca per poder treballar-la, amb els quatre primers metres del tronc, en va fer un moble que actualment presideix la sala de la casa de Palà de Coma..." Una rodanxa del tronc és a la planta baixa. Comptant els anells van deduir entre 511 i 518 anys. L'Àliga de Cardona (figura antropomorfa de la imatgeria de Cardona): "A més d’estar coronada amb la corona ducal, l’Àliga porta gravat l’escut de la vila, realitzat amb un fragment de la fusta del pi del Rèvol, de més de 300 anys d’antiguitat. D’aquesta manera s’usarà un fragment de fusta que s’ha conservat d’aquest pi que ja existia quan l’antiga àliga ballava a Cardona".</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Plantipodes-AM (2023). Pi del rèvol. Recuperat de https://www.plantipodes-am.cat/fitxes/pirevol.html</p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/el-bages.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

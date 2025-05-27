@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Roure del Giol</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Roure del Giol</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM42.055.01</li>
+            <li><strong>Tàxon:</strong> Quercus pubescens  </li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Castellcir</li>
+            <li><strong>Comarca:</strong> El Moianès</li>
+            <li><strong>Propietat:</strong> Privada  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Funcional - simbòlic, religiós</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">Situat al llom d'un prat que hi ha al costat de l'església romànica de Santa Coloma Sasserra.
+A la seva ombra han menjat, jugat i fet gresca moltes generacions que acudeixen als aplecs que anualment se celebren en llaor de la Santa.Hi ha una llegenda que fa referència al Roure del Giol. Segons la llegenda, el 1231 Sant Antoni de Pàdua va viatjar de Pàdua (Itàlia) a Coimbra (Portugal).
+Per a fer aquest viatge, Sant Antoni de Pàdua va utilitzar un cavall volador que li va donar l’arcàngel Sant Miquel. Dins del seu viatge, Sant Antoni de Pàdua va fer diverses parades per a descansar.
+Una d’aquestes parades va ser davant de l’església de Santa Coloma Sasserra, ja que hi van veure un gran roure amb una extensa ombra. Segons es diu, mentre Sant Antoni de Pàdua, junt al seu cavall alat, descansaven sota aquest roure, grans meravelles van passar. El Roure del Giol presideix un prat que antigament feia les funcions d'era comunal del veïnat de Santa Coloma Sasserra. En aquesta esplanada convergien els camins de Santa Coloma Sasserra i el de Collsuspina, amb el que la majestuositat del roure havia presidit tant activitats productives com trobades de caire social i cultural.</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Generalitat de Catalunya (2022). Roure del Giol. Recuperat de https://mediambient.gencat.cat/ca/05_ambits_dactuacio/patrimoni_natural/arbres-monumentals/am_arbres_monumentals_fitxes/moianes/roure-del-giol/index.html  
+Vicens i Llauradó, A., (2005). 100 arbres monumentals de Catalunya: Excursions a peu, en BTT o en cotxe. (Col·lecció "Llibres de muntanya", núm. 10.) Sant Vicenç de Castellet: Farell</p>
+
+        <div class="center">
+            <a href="../comarques/barcelona/el-moianes.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>

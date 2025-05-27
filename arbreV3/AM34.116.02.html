@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Roure Gros de ca n'Iglesias</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header><h1>Roure Gros de ca n'Iglesias</h1></header>
+    <main>
+        <ul>
+            <li><strong>Matrícula:</strong> AM34.116.02</li>
+            <li><strong>Tàxon:</strong> Quercus petraea</li>
+            <li><strong>Tipologia:</strong> </li>
+            <li><strong>Terme municipal:</strong> Osor</li>
+            <li><strong>Comarca:</strong> La Selva</li>
+            <li><strong>Propietat:</strong> Privada  </li>
+            <li><strong>Classificació Etnoecològica:</strong> Funcional - fites</li>
+        </ul>
+
+        <h2>Informació Etnoecològica</h2>
+        <p class="ample">Presideix un espai forestal que té la Molina a pocs minuts. La Molina era una serradora que s'accionava amb aigua o amb una màquina de vapor. La ruta d'en Serrallonga (GR 178) hi passa pel costat.</p>
+
+        <h2>Observacions</h2>
+        <form onsubmit="afegirObservacio(event)">
+            <textarea id="observacions" rows="5" placeholder="Escriu aquí la teva observació..."></textarea><br>
+            <button type="submit">Afegir observació</button>
+        </form>
+        <div id="llista-observacions"></div>
+
+        <h2>Bibliografia</h2>
+        <p class="ample">Generalitat de Catalunya (2022). Roure Gros de ca n'Iglesias. Recuperat de https://mediambient.gencat.cat/ca/05_ambits_dactuacio/patrimoni_natural/arbres-monumentals/am_arbres_monumentals_fitxes/selva-17/roure-gros-de-ca-niglesias/index.html</p>
+
+        <div class="center">
+            <a href="../comarques/girona/la-selva.html">Torna a la comarca</a>
+            <a href="../index.html">Torna a l'inici</a>
+        </div>
+    </main>
+    <script>
+        function afegirObservacio(e) {
+            e.preventDefault();
+            const text = document.getElementById("observacions").value;
+            if (text.trim() === "") return;
+            const div = document.createElement("div");
+            div.textContent = text;
+            document.getElementById("llista-observacions").appendChild(div);
+            document.getElementById("observacions").value = "";
+        }
+    </script>
+</body>
+</html>
